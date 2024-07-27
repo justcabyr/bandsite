@@ -1,0 +1,29 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Aveni';
+}
+
+li {
+  text-decoration: none;
+}
+
+h1 {
+  color: $white;
+  @include page-header();
+}
+
+header {
+  background-color: $black;
+}

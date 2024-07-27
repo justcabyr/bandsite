@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Aveni";
+}
+
+li {
+  text-decoration: none;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+  }
+}
+
+header {
+  background-color: #323232;
+}
+
+@font-face {
+  font-family: "Aveni";
+  src: url();
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+p {
+  font-size: 300px;
+}/*# sourceMappingURL=bio.css.map */
