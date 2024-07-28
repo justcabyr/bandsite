@@ -43,19 +43,8 @@ h1 {
 
   &__section {
     display: flex;
-    // flex-direction: flex;
-    // justify-content: center;
     align-items: center;
-    // width: 100%;
     flex-direction: column;
-    @include tablet {
-      flex-direction: row;
-      padding: 0 2.25rem;
-    }
-
-    @include desktop {
-      padding: 0 4.25rem;
-    }
   }
 
   &__logo {
@@ -91,4 +80,43 @@ h1 {
     font-weight: $demi;
     padding-bottom: 0.8rem;
   }
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__section {
+      margin: 1.6rem 3rem;
+      color: pink;
+    }
+
+    &__item {
+      margin: 0 3rem;
+      font-size: 1.4rem;
+    }
+
+    &__link {
+      padding: 2.6rem 0;
+    }
+  }
+
+  @include desktop {
+    &__section {
+      margin: 0 3rem 0 13.3rem;
+    }
+
+    &__item {
+      margin: 0 3rem;
+      font-size: 1.4rem;
+    }
+
+    &__link {
+      padding: 3.3rem 0;
+    }
+  }
+}
+
+.footer {
+  background-color: $black;
 }

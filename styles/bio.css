@@ -52,17 +52,6 @@ h1 {
   align-items: center;
   flex-direction: column;
 }
-@media screen and (min-width: 768px) {
-  .header__section {
-    flex-direction: row;
-    padding: 0 2.25rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .header__section {
-    padding: 0 4.25rem;
-  }
-}
 .header__logo {
   padding-top: 1rem;
   max-width: 7.5rem;
@@ -92,6 +81,40 @@ h1 {
   border-bottom: #FFFFFF solid 0.25rem;
   font-weight: 600;
   padding-bottom: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .header__section {
+    margin: 1.6rem 3rem;
+    color: pink;
+  }
+  .header__item {
+    margin: 0 3rem;
+    font-size: 1.4rem;
+  }
+  .header__link {
+    padding: 2.6rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__section {
+    margin: 0 3rem 0 13.3rem;
+  }
+  .header__item {
+    margin: 0 3rem;
+    font-size: 1.4rem;
+  }
+  .header__link {
+    padding: 3.3rem 0;
+  }
+}
+
+.footer {
+  background-color: #323232;
 }
 
 @font-face {
