@@ -119,4 +119,154 @@ h1 {
 
 .footer {
   background-color: $black;
+
+  &__content {
+    color: white;
+    padding: 1rem;
+    font-size: 12px;
+    line-height: normal;
+    display: flex;
+    flex-direction: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include tablet {
+      padding: 2.25rem;
+      font-size: 0.875rem;
+    }
+
+    @include desktop {
+      margin: 0 auto;
+      padding: 2.25rem 8 rem;
+      max-width: $desktop-breakpoint;
+    }
+  }
+
+  &__top {
+    @include tablet {
+      display: flex;
+      flex-direction: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__top-item {
+    @include tablet {
+      display: flex;
+      flex-direction: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 2.125rem;
+    }
+  }
+
+  &__header {
+    font-size: 1.5rem;
+    line-height: normal;
+    padding-top: 1rem;
+
+    @include tablet {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__icons {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.5rem;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 3rem;
+    }
+  }
+
+  &__card {
+    padding: 0.5rem 0;
+  }
+
+  &__name {
+    font-size: $demi;
+    font-weight: normal;
+    line-height: normal;
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    padding-bottom: 0.5rem;
+    line-height: 1.25rem;
+
+    @include tablet {
+      padding: 1rem 0;
+    }
+  }
+
+  &__email {
+    color: $white;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__logo--buttom {
+    padding-top: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__logo--right {
+    display: none;
+
+    @include tablet {
+      display: contents;
+    }
+  }
+
+  &__footer__image {
+    padding: 1.5rem 0 1rem;
+    max-width: 7.5rem;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.75rem;
+    margin-bottom: 1.4rem;
+
+    @include tablet {
+      font-size: 1rem;
+      margin-top: 2.4rem;
+      margin-bottom: 1.4rem;
+    }
+  }
 }
