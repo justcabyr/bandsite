@@ -7,7 +7,17 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
+  text-decoration: none;
+  display: block;
+}
+
+li {
+  list-style-type: none;
   text-decoration: none;
 }
 
@@ -25,6 +35,60 @@ h1 {
   @include page-header();
 }
 
-header {
+.header {
   background-color: $black;
+  display: flex;
+  flex-direction: column;
+  color: $white;
+
+  &__section {
+    display: flex;
+    // flex-direction: flex;
+    // justify-content: center;
+    align-items: center;
+    // width: 100%;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      padding: 0 2.25rem;
+    }
+
+    @include desktop {
+      padding: 0 4.25rem;
+    }
+  }
+
+  &__logo {
+    padding-top: 1rem;
+    max-width: 7.5rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__link {
+    color: $silver;
+  }
+
+  &__link--active {
+    color: $white;
+    border-bottom: $white solid 0.25rem;
+    font-weight: $demi;
+    padding-bottom: 0.8rem;
+  }
 }
