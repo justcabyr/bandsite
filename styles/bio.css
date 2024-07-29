@@ -283,4 +283,61 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+.gallery {
+  background-color: #FAFAFA;
+}
+.gallery__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.6rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__content {
+    padding: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__content {
+    margin: 0 auto;
+    padding: 2.25rem 8rem;
+    max-width: 1280px;
+  }
+}
+.gallery__title {
+  padding: 0.8rem 0;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    padding: 2rem 0 2rem;
+    font-size: 2.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+.gallery__img {
+  display: inline-grid;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0;
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.9s ease;
+}
+.gallery__img:hover {
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+@media screen and (min-width: 768px) {
+  .gallery__img {
+    padding: 0;
+  }
 }/*# sourceMappingURL=bio.css.map */
