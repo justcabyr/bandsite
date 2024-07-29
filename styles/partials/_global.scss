@@ -92,7 +92,7 @@ li {
     }
 
     &__link {
-      padding: 2.6rem 0;
+      padding: 1.6rem 0;
     }
   }
 
@@ -107,7 +107,7 @@ li {
     }
 
     &__link {
-      padding: 3.3rem 0;
+      padding: 1.6rem 0;
     }
   }
 }
@@ -216,7 +216,6 @@ li {
     line-height: 1.25rem;
 
     @include tablet {
-      padding: 1rem 0;
     }
   }
 
