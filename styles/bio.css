@@ -83,7 +83,7 @@ li {
     font-size: 1.4rem;
   }
   .header__link {
-    padding: 2.6rem 0;
+    padding: 1.6rem 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -95,7 +95,7 @@ li {
     font-size: 1.4rem;
   }
   .header__link {
-    padding: 3.3rem 0;
+    padding: 1.6rem 0;
   }
 }
 
@@ -197,11 +197,6 @@ li {
 .footer__text {
   padding-bottom: 0.5rem;
   line-height: 1.25rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__text {
-    padding: 1rem 0;
-  }
 }
 .footer__email {
   color: #FFFFFF;
@@ -442,15 +437,10 @@ li {
   align-items: center;
   padding: 1.6rem;
 }
-@media screen and (min-width: 768px) {
-  .gallery__content {
-    padding: 2.25rem;
-  }
-}
 @media screen and (min-width: 1280px) {
   .gallery__content {
     margin: 0 auto;
-    padding: 2.25rem 8rem;
+    padding: 0 8rem;
     max-width: 1280px;
   }
 }
