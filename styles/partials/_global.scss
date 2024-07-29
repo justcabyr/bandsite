@@ -30,11 +30,6 @@ li {
   text-decoration: none;
 }
 
-h1 {
-  color: $white;
-  @include page-header();
-}
-
 .header {
   background-color: $black;
   display: flex;
