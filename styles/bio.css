@@ -23,7 +23,9 @@ li {
   line-height: 1.5;
 }
 
-body, textarea, ::placeholder {
+body,
+textarea,
+::placeholder {
   font-family: "AvenirNextLTPro-Demi";
   line-height: 1.5;
 }
@@ -101,37 +103,6 @@ li {
   }
   .header__link {
     padding: 1.6rem 0;
-  }
-}
-
-.hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-}
-@media screen and (min-width: 1280px) {
-  .hero__content {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-}
-.hero__title {
-  font-size: 1.5rem;
-  padding: 5.1875rem 1rem;
-  text-align: left;
-  color: #FFFFFF;
-}
-@media screen and (min-width: 768px) {
-  .hero__title {
-    font-size: 3.75rem;
-    padding: 12rem 2.25rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero__title {
-    padding: 17rem 8rem;
   }
 }
 
@@ -301,6 +272,37 @@ li {
   font-style: normal;
   font-display: swap;
 }
+.hero {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .hero__content {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+.hero__title {
+  font-size: 1.5rem;
+  padding: 5.1875rem 1rem;
+  text-align: left;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 3.75rem;
+    padding: 12rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    padding: 17rem 8rem;
+  }
+}
+
 .about {
   padding: 1rem;
 }

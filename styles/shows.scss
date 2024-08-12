@@ -1,0 +1,138 @@
+@use './partials/global' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+
+// hero section
+.hero {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url('../assets/images/hero-shows.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+
+  &__content {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include tablet {
+      padding: 2.25rem;
+    }
+    @include desktop {
+      padding: 16rem 8rem;
+      flex-direction: row;
+      gap: 7.875rem;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: $white;
+    width: 80%;
+
+    @include tablet {
+      font-size: 3.75rem;
+      padding: 0.5rem 0rem;
+      width: 35rem;
+    }
+
+    @include desktop {
+      width: 90%;
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    font-weight: $regular;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      font-weight: $demi;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+  }
+
+  &__music {
+    width: 100%;
+    height: 8.125rem;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      padding: 2.25rem 0;
+      width: 25.25rem;
+      height: 11.6875rem;
+    }
+    @include desktop {
+      width: 85%;
+    }
+  }
+}
+
+.shows {
+  width: 100%;
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 2rem;
+  }
+
+  &__list {
+    width: 100%;
+    position: relative;
+  }
+
+  &__card {
+    width: 100%;
+    border-bottom: 0.0625rem solid $secondary-silver;
+
+    &:hover {
+      background-color: $secondary-silver;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    color: $silver;
+  }
+
+  &__sub-container {
+    margin: 1rem 0;
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__date {
+    font-weight: 600;
+  }
+}
+button {
+  color: #ffffff;
+  background-color: #323232;
+  width: 100%;
+  font-size: 0.625rem;
+  align-self: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  height: 2rem;
+  margin-bottom: 1rem;
+  z-index: 3;
+
+  @include tablet {
+    width: 60%;
+    align-self: center;
+    justify-self: flex-end;
+  }
+}
