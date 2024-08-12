@@ -3,37 +3,7 @@
 @use './partials/typography' as *;
 @use './partials/variables' as *;
 
-.hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url('../assets/images/hero-bio.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-
-  &__content {
-    @include desktop {
-      max-width: $desktop-breakpoint;
-      margin: 0 auto;
-    }
-  }
-
-  &__title {
-    font-size: 1.5rem;
-    padding: 5.1875rem 1rem;
-    text-align: left;
-    color: $white;
-
-    @include tablet {
-      font-size: 3.75rem;
-      padding: 12rem 2.25rem;
-    }
-
-    @include desktop {
-      padding: 17rem 8rem;
-    }
-  }
-}
-
+// about section
 .about {
   padding: 1rem;
   @include tablet {
@@ -157,6 +127,7 @@
   }
 }
 
+// gallery section
 .gallery {
   background-color: $alabaster;
 
@@ -208,6 +179,197 @@
 
     @include tablet {
       padding: 0;
+    }
+  }
+}
+
+// comments section
+.comments {
+  background-color: $white;
+  color: $black;
+
+  padding: 1rem;
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    margin: 0, auto;
+    padding: 2rem 8rem;
+    max-width: $desktop-breakpoint;
+  }
+
+  &__content {
+    padding: 1rem 0 0.5rem;
+
+    @include tablet {
+      padding: 1.25rem 4.5rem 0;
+    }
+
+    @include desktop {
+      padding: 1.25rem 16.25rem 0;
+    }
+  }
+
+  &__title {
+    padding: 0.5rem 0 0;
+    font-weight: $demi;
+
+    @include tablet {
+      padding: 1rem 0 1.5rem;
+      font-size: 2.25rem;
+    }
+  }
+
+  &__form {
+    border-bottom: solid 0.0625rem $mercury;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 1rem;
+    object-fit: cover;
+    object-position: 10%;
+  }
+
+  &__grey-avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 1rem;
+    object-fit: cover;
+    object-position: 10%;
+    background-color: $mercury;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    font-size: 0.8125rem;
+    border-bottom: solid 0.0625rem $mercury;
+    padding: 1rem 0 0.5rem;
+    gap: 1rem;
+    flex-grow: 0;
+
+    @include tablet {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__details {
+    width: 100%;
+  }
+
+  &__author {
+    font-weight: 600;
+  }
+
+  &__date {
+    color: $silver;
+  }
+
+  &__response {
+    padding: 0.5rem 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__label {
+    color: silver;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.625rem;
+    margin: 0.125rem 0;
+
+    @include tablet {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__input {
+    height: 2.25rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    border: solid 0.0625rem $mercury;
+    background-color: $alabaster;
+    margin: 0.125rem 0 1rem;
+    padding: 0.75rem;
+    color: $black;
+
+    @include tablet {
+      height: 3rem;
+      padding: 1rem;
+    }
+
+    &::placeholder {
+      color: $black;
+      font-size: 0.8125rem;
+
+      @include tablet {
+        font-size: 0.875rem;
+      }
+    }
+
+    &:focus {
+      border-color: $black;
+      background-color: $white;
+      outline: none;
+    }
+
+    &-comment {
+      height: 5rem;
+      resize: none;
+
+      @include tablet {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__submit {
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    border: none;
+    text-transform: uppercase;
+    background-color: $black;
+    color: $white;
+    font-weight: $demi;
+    margin: 0.5rem 0 1rem;
+    font-size: 1rem;
+    padding: 0 2rem;
+
+    @include tablet {
+      width: 9.375rem;
+      margin-left: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    &:hover {
+      background-color: $darkblack;
     }
   }
 }

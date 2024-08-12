@@ -21,7 +21,7 @@ li {
   text-decoration: none;
 }
 
-body {
+body, textarea, ::placeholder {
   font-family: 'AvenirNextLTPro-Demi';
   line-height: 1.5;
 }
@@ -112,13 +112,44 @@ li {
   }
 }
 
+.hero {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url('../assets/images/hero-bio.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+
+  &__content {
+    @include desktop {
+      max-width: $desktop-breakpoint;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding: 5.1875rem 1rem;
+    text-align: left;
+    color: $white;
+
+    @include tablet {
+      font-size: 3.75rem;
+      padding: 12rem 2.25rem;
+    }
+
+    @include desktop {
+      padding: 17rem 8rem;
+    }
+  }
+}
+
 .footer {
   background-color: $black;
 
   &__content {
     color: white;
     padding: 1rem;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: normal;
     display: flex;
     flex-direction: flex;
