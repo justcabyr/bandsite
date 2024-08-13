@@ -1,26 +1,31 @@
-const comments = [
-  {
-    name: 'Victor Pinto',
-    date: new Date('11/02/2023'),
-    text: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-  },
-  {
-    name: 'Christina Cabrera',
-    date: new Date('10/28/2023'),
-    text: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
-  },
-  {
-    name: 'Isaac Tadesse',
-    date: new Date('10/20/2023'),
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+import BandSiteApi from './band-site-api.js';
 
-function getDate(date) {
+const apiKey = 'c1ec5620-4c84-47aa-8d71-64375e69d9c2';
+
+let bandSiteAPi = new BandSiteApi(apiKey);
+
+let comments = [];
+
+async function render() {
+  try {
+    comments = await bandSiteAPi.getComments();
+    comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // console.log(comments);
+    commentsSection.innerText = '';
+    comments.forEach((comment) => displayComment(comment));
+  } catch (error) {
+    console.error('Error fetching shows', error);
+  }
+}
+
+render();
+
+// Format date
+function formatDate(date) {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'America/St_Johns' };
   const localDate = new Intl.DateTimeFormat('en-CA', options).format(date);
   const [year, month, day] = localDate.split('-');
-  return `${day}-${month}-${year}`;
+  return `${month}/${day}/${year}`;
 }
 
 const commentsSection = document.getElementById('comments__section');
@@ -47,11 +52,11 @@ function displayComment(comment) {
 
   const date = document.createElement('p');
   date.classList.add('comments__date');
-  date.textContent = getDate(comment.date);
+  date.textContent = formatDate(comment.timestamp);
 
   const text = document.createElement('p');
   text.classList.add('comments__response');
-  text.textContent = comment.text;
+  text.textContent = comment.comment;
 
   info.appendChild(name);
   info.appendChild(date);
@@ -69,16 +74,20 @@ function defaultComments() {
   comments.forEach((comment) => displayComment(comment));
 }
 
-defaultComments();
-
-commentForm.addEventListener('submit', (event) => {
+commentForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const newComment = {
     name: nameInput.value,
     date: new Date(),
-    text: commentInput.value,
+    comment: commentInput.value,
   };
+
+  try {
+    await bandSiteAPi.postComment(nameInput.value, commentInput.value);
+  } catch (error) {
+    console.error('Error posting comment', error);
+  }
 
   comments.unshift(newComment);
 
