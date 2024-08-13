@@ -2,12 +2,11 @@ import BandSiteApi from './band-site-api.js';
 
 const apiKey = 'c1ec5620-4c84-47aa-8d71-64375e69d9c2';
 
-let showsAPi = new BandSiteApi(apiKey);
+let bandSiteAPi = new BandSiteApi(apiKey);
 
 async function render() {
   try {
-    const shows = await showsAPi.getShows();
-    console.log(shows);
+    const shows = await bandSiteAPi.getShows();
     showsList.innerText = '';
     shows.forEach(displayShow);
   } catch (error) {
