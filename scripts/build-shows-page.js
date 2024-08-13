@@ -1,43 +1,21 @@
-const shows = [
-  {
-    date: '2024-09-09',
-    weekDay: 'Monday',
-    venue: 'Ronald Lane',
-    location: 'San Francisco, CA',
-  },
-  {
-    date: '2024-09-17',
-    weekDay: 'Tuesday',
-    venue: 'Pier 3 East',
-    location: 'San Francisco, CA',
-  },
-  {
-    date: '2024-10-12',
-    weekDay: 'Saturday',
-    venue: 'View Lounge',
-    location: 'San Francisco, CA',
-  },
-  {
-    date: '2024-11-16',
-    weekDay: 'Saturday',
-    venue: 'Hyatt Agency',
-    location: 'San Francisco, CA',
-  },
-  {
-    date: '2024-11-29',
-    weekDay: 'Friday',
-    venue: 'Moscow Center',
-    location: 'San Francisco, CA',
-  },
-  {
-    date: '2024-12-18',
-    weekDay: 'Wednesday',
-    venue: 'Press Club',
-    location: 'San Francisco, CA',
-  },
-];
+import BandSiteApi from './band-site-api.js';
 
-console.log('here')
+const apiKey = 'c1ec5620-4c84-47aa-8d71-64375e69d9c2';
+
+let showsAPi = new BandSiteApi(apiKey);
+
+async function render() {
+  try {
+    const shows = await showsAPi.getShows();
+    console.log(shows);
+    showsList.innerText = '';
+    shows.forEach(displayShow);
+  } catch (error) {
+    console.error('Error fetching shows', error);
+  }
+}
+
+render();
 
 function createDiv(className, text = '') {
   const div = document.createElement('div');
@@ -46,21 +24,35 @@ function createDiv(className, text = '') {
   return div;
 }
 
+// Format date
+function formatDate(date) {
+  const options = {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    timeZone: 'America/St_Johns',
+  };
+  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+  const [weekday, month, day, year] = formattedDate.replace(/,/g, '').split(' ');
+  return `${weekday} ${month} ${day} ${year}`;
+}
+
 const showsList = document.getElementById('shows__list');
 
 function displayShow(show) {
   const showEl = createDiv('shows__card');
 
   const dateContainer = createDiv('shows__sub-container');
-  const dateTitleEl = createDiv('shows__subtitle', 'DATE');
-  const dateEl = createDiv('shows__date', show.date);
+  const dateTitleEl = createDiv('shows__subtitle', '');
+  const dateEl = createDiv('shows__date', formatDate(show.date));
 
   const venueContainer = createDiv('shows__sub-container');
-  const venueTitleEl = createDiv('shows__subtitle', 'VENUE');
-  const venueEl = createDiv('shows__venue', show.venue);
+  const venueTitleEl = createDiv('shows__subtitle', '');
+  const venueEl = createDiv('shows__venue', show.place);
 
   const locationContainer = createDiv('shows__sub-container');
-  const locationTitleEl = createDiv('shows__subtitle', 'LOCATION');
+  const locationTitleEl = createDiv('shows__subtitle', '');
   const locationEl = createDiv('shows__location', show.location);
 
   const buttonEl = document.createElement('button');
@@ -82,11 +74,3 @@ function displayShow(show) {
 
   showEl.append(buttonEl);
 }
-
-function render() {
-  showsList.innerHTML = '';
-  shows.forEach(displayShow);
-}
-
-render();
-
